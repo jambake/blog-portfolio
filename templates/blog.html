@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>blog</h1>
+<hr>
+
+{% for newpost in newposts %}
+  <div class="newpost">
+  <br>
+  <div class="newpost-title"><a href="/blog/{{ newpost.key().id() }}">{{ newpost.title }}</a></div>
+  <br>
+  <div class="newpost-body">{{ newpost.newpost }}</div>
+  <p class="created">{{ newpost.created }}</p>
+  <br>
+  </div>
+  <hr>
+{% endfor %}
+
+{% endblock %}
